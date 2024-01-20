@@ -16,7 +16,8 @@ white_wines.columns = ["Fixed acidity",
                        "Alcohol",
                        "Quality"]
 white_wines.drop_duplicates(inplace=True)
-
+white_wines.drop("Citric acid", axis=1, inplace=True)
+white_wines.drop("Free sulfur dioxide", axis=1, inplace=True)
 
 # Split data for study and test sets
 seed_value = 308200

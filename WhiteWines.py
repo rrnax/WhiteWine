@@ -1,6 +1,8 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from ClassificationModel import ClassificationModel
+from RegressionModel import RegressionModel
+
 
 # Data Exploration
 white_wines = pd.read_csv("white_wine.csv", sep=";", decimal=",", skipinitialspace=True, header=0)
@@ -27,8 +29,14 @@ X = white_wines.drop("Quality", axis=1)
 y = white_wines["Quality"]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=seed_value)
 
+print("CLASSIFICATION MODEL:")
 classification_model = ClassificationModel(X_train, X_test, y_train, y_test, seed_value)
 classification_model.get_model_statistics()
 classification_model.get_variables_importance()
+print()
 
+print("REGRESSION MODEL:")
+regression_model = RegressionModel(X_train, X_test, y_train, y_test, seed_value)
+regression_model.get_model_statistics()
+regression_model.get_variables_importance()
 

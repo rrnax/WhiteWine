@@ -2,6 +2,7 @@ from sklearn.tree import DecisionTreeRegressor
 from sklearn.metrics import mean_absolute_error, accuracy_score, confusion_matrix
 import numpy as np
 import pandas as pd
+# import  matplotlib.pyplot as plt
 # from sklearn.model_selection import GridSearchCV
 
 class RegressionModel:
@@ -37,3 +38,8 @@ class RegressionModel:
         importance.sort_values(inplace=True)
         print("Importance of variables in classification model:")
         print(importance)
+        # plt.figure(figsize=(10,6))
+        # importance.plot(kind='barh')
+        # plt.xlabel("Importance")
+        # plt.ylabel("Variables")
+        # plt.show()

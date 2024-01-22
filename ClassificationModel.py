@@ -1,8 +1,7 @@
 import pandas as pd
 from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix, mean_absolute_error
-
-
+#import  matplotlib.pyplot as plt
 # from sklearn.model_selection import GridSearchCV
 
 def get_tree_size(estimator):
@@ -46,3 +45,8 @@ class ClassificationModel:
         importance.sort_values(inplace=True)
         print("Importance of variables in classification model:")
         print(importance)
+        # plt.figure(figsize=(10,6))
+        # importance.plot(kind='barh')
+        # plt.xlabel("Importance")
+        # plt.ylabel("Variables")
+        # plt.show()
